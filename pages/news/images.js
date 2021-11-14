@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const getStaticProps = async () => {
 
-	const res = await fetch("https://mypaintings9.herokuapp.com/images");
+	const res = await fetch("https://mypaintings9-admin.herokuapp.com/images");
 	const data = await res.json();
 
 	//	{image.name[0].formats.small.url}
