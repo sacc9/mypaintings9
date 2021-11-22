@@ -61,7 +61,7 @@ export const getStaticProps = async () => {
     .header li:first-child  {
       float: left;
       display: inline-block;
-      background:red;
+      background:blue;
     }
 
     .header li {
