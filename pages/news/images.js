@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Fragment } from 'react';
 import Link from 'next/link';
 
-export async function getServerSideProps() {
+export const getServerSideProps = async ({}) => {
 
 	const res = await fetch("https://mypaintings9-admin.herokuapp.com/images");
 	const data = await res.json();
