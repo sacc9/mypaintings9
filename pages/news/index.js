@@ -10,7 +10,7 @@ function  NewsPage() {
 	return ( 
 	<Fragment>
 		<h1>The News Page</h1>   
-		<img src="https://res.cloudinary.com/dwj3obdhh/image/upload/v1632773604/thumbnail_alfaholicsgtar021completed13_dcf4054b59.jpg" alt="Picture of the author" />
+		<Image src="https://res.cloudinary.com/dwj3obdhh/image/upload/v1632773604/thumbnail_alfaholicsgtar021completed13_dcf4054b59.jpg" alt="Picture of the author" />
   
 		<ul>
 			<li>
