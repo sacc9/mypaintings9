@@ -21,12 +21,21 @@ export async function getServerSideProps() {
 	const Images = ({images}) => {
   		return (	
         <Fragment>
-  		<div style={{background: "black"}}>      
+  		  <Head>
+        		<title>My page title</title>
+        		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      	</Head>
+
+  		<div style={{background: "white"}}>
+
+        <div className="toggle">
+						<img src="https://img.icons8.com/ios/50/000000/menu--v1.png"/>
+      	</div>
         <div className="header">
         <ul>
           <li><p>LOGO</p></li>
           <li><Link href="/news/images">
-          <p>Home</p>
+          <p>Portfolio</p>
         </Link></li>
           <li><Link href="/news/about-me">
           <p>About me</p>
@@ -46,62 +55,132 @@ export async function getServerSideProps() {
 		  	))} 		
 
   		</div>
+  		<div className="footer">
+  			
+  		</div>
   	</div>
      
 		<style jsx>{`	
 
-    .header {
-      height: 80px;
+    .header 
+    {
+    	height: 100px;
+    	position: relative;
     }  
 
-    .header ul {
+    .header ul 
+    {      
+    	position: relative;
+    	align-items: center;
+    	vertical-align: middle;
       overflow: hidden;
+      margin-top: 20px;
     }
 
-    .header li:first-child  {
+    .header li 
+    {
+    	text-align: center;
+    	vertical-align: middle;
+    }
+
+    .header li:first-child  
+    {      
       float: left;
       display: inline-block;
-      background:blue;
+      margin-right: 50px; 
     }
 
-    .header li {
+    .header li:not(:first-child) 
+    { 
       float: left;
       display: inline-block;
       list-style: none;
+      text-align: center;
       text-decoration: none;
       width: 120px;
-      margin-right: 50px;
+      margin-left: 25px;
+      margin-right: 25px;
       transition: 0.5s;
     }
 
-    .header li:hover {
+
+    .header li:last-child 
+    { 
+      float: right;
+    }
+
+    .header li:hover:not(:first-child) 
+    {  
       width: 170px;
+      margin-left: 0px;
       margin-right: 0px;
+      background: grey;
     }
 
-    .header p {
-      color: white;
+    .header p 
+    { 
+      color: black;
       font-size: 18pt;
-      
     }
 
-    .header p:hover {
+    .header p:hover 
+    {  
       cursor: pointer;
-      background: #777;
     }
 
-		div div{
+		.toggle	
+		{
+			display: flex;
+    	align-items: center;
+			height: 100px;
+			line-height: 100px;
+			text-align: right;
+			box-sizing: border-box;
+			color: #fff;
+			font-size: 30px;
+			display: none;
+		}
+
+		.toggle img 
+		{
+			margin-top: 35px;
+		}
+
+		.toggle img:hover 
+		{
+			cursor: pointer;
+		}
+
+		@media screen and (max-width:920px) {
+			.toggle
+			{
+			  top: 20px;
+				width: 100%;
+				display: block;
+			}
+
+			.header 
+			{
+				display: none;
+			}
+
+		}
+
+		div div {
+		   
 		   max-width: 80%;
-		   background: black;
+		   background: white;
 		   margin: 0 auto;
 		   padding-top: 10px;
 		}
 
 		div div h1 {
+		   
 		   color: white;
 		}
 
 		div div div {
+		  
 		  display: flex;
 		  flex-wrap: wrap;
 		  max-width: 100%;
@@ -109,6 +188,7 @@ export async function getServerSideProps() {
 		}	
 
 		div div div div {
+		  
 		  max-height: 60vh;
 		  flex-grow: 1;
 		  padding: 5px;
@@ -116,6 +196,7 @@ export async function getServerSideProps() {
 		}
 
 		div div div div img {
+		  
 		  max-height: 100%;
 		  min-width: 100%;
 		  object-fit: cover;
@@ -124,8 +205,15 @@ export async function getServerSideProps() {
 		} 
 
 		div div div div img:hover {
+			
 			transform: scale(0.95);
 		}
+
+		.footer 
+		{
+			height:100px;
+		}
+
       `}</style> 
             <style jsx global>{`
         p {
